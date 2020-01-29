@@ -48,13 +48,10 @@ public class GameManager : MonoBehaviour
                 _recordedAnswerList = new List<string>();
             _recordedAnswerList.Add(opData);
             _recordedAnswer += " " + opData;
-            if(string.Equals(_recordedAnswer,_currentQuestion._answer))
+
+            if(_recordedAnswerList.Count >= _currentQuestion._options.Length)
             {
-                AnsweredRight();
-            }
-            else if(_recordedAnswerList.Count >= _currentQuestion._options.Length)
-            {
-                AnsweredWrong();
+                Answered(string.Equals(_recordedAnswer, _currentQuestion._answer));
             }
         }
         else
@@ -63,13 +60,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void AnsweredWrong()
+    void Answered(bool isCorrect)
     {
-
-    }
-
-    void AnsweredRight()
-    {
-
+        QuestionAnsweredEvenData questionAnsweredEvenData = new QuestionAnsweredEvenData(isCorrect, _recordedAnswer, _currentLevelData);
+        EventManager.TriggerEvent(EventNames.QuestionAnswered, (object)questionAnsweredEvenData);
     }
 }

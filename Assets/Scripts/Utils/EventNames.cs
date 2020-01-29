@@ -7,7 +7,7 @@ public class EventNames
 
 	public static string RecordWord = "RecordWord";
 	public static string ShowQuestion = "ShowQuestion";
-	public static string StatementDone = "StatementDone";
+	public static string QuestionAnswered = "QuestionAnswered";
 
 
 	public static string UpdateScore = "UpdateScore";

@@ -11,7 +11,6 @@ public class SaveDataManager : MonoBehaviour
         EventManager.StartListening(EventNames.OnUserdataLoaded, SetUserData);
         EventManager.StartListening(EventNames.UpdateScore, UpdateUserScore);
         EventManager.StartListening(EventNames.UpdateLevel, UpdateUserLevel);
-
     }
 
     private void OnDisable()
@@ -19,7 +18,6 @@ public class SaveDataManager : MonoBehaviour
         EventManager.StopListening(EventNames.OnUserdataLoaded, SetUserData);
         EventManager.StopListening(EventNames.UpdateScore, UpdateUserScore);
         EventManager.StopListening(EventNames.UpdateLevel, UpdateUserLevel);
-
     }
 
     void SetUserData(object data)

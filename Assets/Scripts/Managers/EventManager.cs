@@ -86,3 +86,27 @@ public class EventManager : MonoBehaviour
         }
     }
 }
+
+///
+/////
+// Event Data Encapsulations
+/////
+///
+
+public class QuestionAnsweredEvenData
+{
+    bool _isCorrect;
+    string _answerGiven;
+    LevelData _levelData;
+
+    public bool IsCorrect => _isCorrect;
+    public string AnswerGiven => _answerGiven;
+    public LevelData LevelData => _levelData;
+
+    public QuestionAnsweredEvenData(bool isCorrect, string answerGiven, LevelData levelData)
+    {
+        _isCorrect = isCorrect;
+        _answerGiven = answerGiven;
+        _levelData = levelData;
+    }
+}

@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelDataBase", menuName = "ScriptableObjects/CreateLevelDataBase", order = 1)]
 public class LevelsDataBase : ScriptableObject
 {
+    [SerializeField]
     LevelData[] _levels;
 
     public LevelData[] GetAllLevelsData()

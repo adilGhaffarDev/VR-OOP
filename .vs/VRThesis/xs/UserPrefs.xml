@@ -1,8 +1,17 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UI/BoardUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/EventManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Managers/SaveDataManager.cs" Line="12" Column="1" />
-      <File FileName="Assets/Scripts/UI/BoardUI.cs" Line="36" Column="1" />
+      <File FileName="Assets/Scripts/Managers/SaveDataManager.cs" Line="10" Column="6" />
+      <File FileName="Assets/Scripts/UI/BoardUI.cs" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" />
+      <File FileName="Assets/Scripts/Managers/StaticDataManager.cs" />
+      <File FileName="Assets/Scripts/DataScripts/LevelsDataBase.cs" />
+      <File FileName="Assets/Scripts/Managers/PlayFabManager.cs" />
+      <File FileName="Assets/Scripts/PlayFab/PlayFabLogin.cs" />
+      <File FileName="Assets/Scripts/UI/OverlayUI.cs" />
+      <File FileName="Assets/Scripts/SaveData/PlayerData.cs" />
+      <File FileName="Assets/Scripts/Utils/EventNames.cs" />
+      <File FileName="Assets/Scripts/Managers/EventManager.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,11 +20,12 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="DataScripts" expanded="True" />
-                <Node name="Managers" expanded="True" />
-                <Node name="PlayFab" expanded="True" />
-                <Node name="UI" expanded="True">
-                  <Node name="BoardUI.cs" selected="True" />
+                <Node name="Managers" expanded="True">
+                  <Node name="EventManager.cs" selected="True" />
                 </Node>
+                <Node name="PlayFab" expanded="True" />
+                <Node name="SaveData" expanded="True" />
+                <Node name="UI" expanded="True" />
                 <Node name="Utils" expanded="True" />
               </Node>
             </Node>
@@ -26,7 +36,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6b9f2a2d-21a6-46a2-8e71-cf26c06f5e96" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="09421052-3be3-4b8a-ba20-1de2078e85e0" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

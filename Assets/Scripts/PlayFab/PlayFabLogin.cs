@@ -11,7 +11,7 @@ public class PlayFabLogin : MonoBehaviour
     public static string CustomId = "";
 #endif
 
-    void Start()
+    void Awake()
     {
 #if UNITY_EDITOR
         if (!PlayerPrefs.HasKey(PlayerIdKey))
@@ -49,6 +49,7 @@ public class PlayFabLogin : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
+        EventManager.TriggerEvent(EventNames.OnUserLoggedIn, result);
         GameUtils.Log("Congratulations, you made your first successful API call!");
     }
 
