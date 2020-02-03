@@ -12,11 +12,15 @@ public class PlayFabManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.StartListening(EventNames.OnUserLoggedIn, GetUserData);
+        EventManager.StartListening(EventNames.QuestionAnswered, UpdateUserProgress);
+
     }
 
     private void OnDisable()
     {
         EventManager.StopListening(EventNames.OnUserLoggedIn, GetUserData);
+        EventManager.StopListening(EventNames.QuestionAnswered, UpdateUserProgress);
+
     }
 
     void GetUserData(object data)
@@ -25,13 +29,13 @@ public class PlayFabManager : MonoBehaviour
         {
             _loginResult = (LoginResult)data;
 
-            string userName = "user";
-            string userScore = "0";
-            string userLevel = "0";
+            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_USERNAME, out string userName);
+            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_SCORE, out string userScore);
+            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_LEVEL, out string userLevel);
 
-            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_USERNAME, out userName);
-            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_SCORE, out userScore);
-            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_LEVEL, out userLevel);
+            userName = userName == null ? "user" : userName;
+            userScore = userScore == null ? "0" : userScore;
+            userLevel = userLevel == null ? "0" : userLevel;
 
             PlayerData playerData = new PlayerData(_loginResult.PlayFabId, userName, int.Parse(userScore), int.Parse(userLevel));
 
@@ -76,5 +80,18 @@ public class PlayFabManager : MonoBehaviour
             Debug.Log("Got error setting user data Ancestor to Arthur");
             Debug.Log(error.GenerateErrorReport());
         });
+    }
+
+    void UpdateUserProgress(object data)
+    {
+        QuestionAnsweredEvenData questionAnsweredEvenData = data as QuestionAnsweredEvenData;
+        if (questionAnsweredEvenData.IsCorrect)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 }

@@ -20,11 +20,15 @@ public class BoardUI : MonoBehaviour
     private void OnEnable()
     {
         EventManager.StartListening(EventNames.ShowQuestion, SetBoard);
+        EventManager.StartListening(EventNames.QuestionAnswered, OnQuestionAnswered);
+
     }
 
     private void OnDisable()
     {
-        EventManager.StartListening(EventNames.ShowQuestion, SetBoard);
+        EventManager.StopListening(EventNames.ShowQuestion, SetBoard);
+        EventManager.StopListening(EventNames.QuestionAnswered, OnQuestionAnswered);
+
     }
 
     void SetBoard(object data)
@@ -36,9 +40,9 @@ public class BoardUI : MonoBehaviour
             for (int i = 0; i < question._options.Length; i++)
             {
                 GameObject opGo = Instantiate(_optionPrefab,_optionsParent);
-
-                opGo.GetComponent<TextMeshProUGUI>().text = question._options[i];
-                opGo.GetComponent<Button>().onClick.AddListener(() => OnOptionClick(question._options[i]) );
+                string opString = question._options[i];
+                opGo.GetComponent<TextMeshProUGUI>().text = opString;
+                opGo.GetComponent<Button>().onClick.AddListener(() => OnOptionClick(opString));
 
                 _options.Add(question._options[i], opGo);
             }
@@ -67,5 +71,24 @@ public class BoardUI : MonoBehaviour
     {
         _answerPan.text += " " + opString;
         EventManager.TriggerEvent(EventNames.RecordWord, (object)opString);
+    }
+
+    void OnQuestionAnswered(object data)
+    {
+        QuestionAnsweredEvenData questionAnsweredEvenData = data as QuestionAnsweredEvenData;
+        if (questionAnsweredEvenData.IsCorrect)
+        {
+            _answerPan.text = "";
+        }
+        else
+        {
+            _answerPan.text = "Loading Next Question..";
+            Invoke("LoadNextQuestion", 2);
+        }
+    }
+
+    void LoadNextQuestion()
+    {
+        EventManager.TriggerEvent(EventNames.ShowNextQuestion,null);
     }
 }

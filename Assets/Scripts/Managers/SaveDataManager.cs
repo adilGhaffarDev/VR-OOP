@@ -40,7 +40,9 @@ public class SaveDataManager : MonoBehaviour
         }
         else
         {
-            GameUtils.Log("Score recorded is null!");
+            _playerData.UpdateScore(Constants.ScorePerAnswer) ;
+
+            //GameUtils.Log("Score recorded is null!");
         }
     }
 

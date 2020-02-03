@@ -1,32 +1,46 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/EventManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/PlayFabManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/Managers/SaveDataManager.cs" Line="10" Column="6" />
-      <File FileName="Assets/Scripts/UI/BoardUI.cs" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" />
-      <File FileName="Assets/Scripts/Managers/StaticDataManager.cs" />
-      <File FileName="Assets/Scripts/DataScripts/LevelsDataBase.cs" />
-      <File FileName="Assets/Scripts/Managers/PlayFabManager.cs" />
-      <File FileName="Assets/Scripts/PlayFab/PlayFabLogin.cs" />
-      <File FileName="Assets/Scripts/UI/OverlayUI.cs" />
-      <File FileName="Assets/Scripts/SaveData/PlayerData.cs" />
-      <File FileName="Assets/Scripts/Utils/EventNames.cs" />
-      <File FileName="Assets/Scripts/Managers/EventManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Managers/SaveDataManager.cs" Line="16" Column="18" />
+      <File FileName="Assets/Scripts/UI/BoardUI.cs" Line="92" Column="67" />
+      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="12" Column="9" />
+      <File FileName="Assets/Scripts/Managers/StaticDataManager.cs" Line="24" Column="52" />
+      <File FileName="Assets/Scripts/UI/HelperUI.cs" Line="34" Column="6" />
+      <File FileName="Assets/Scripts/Utils/EventNames.cs" Line="9" Column="55" />
+      <File FileName="Assets/Scripts/DataScripts/LevelData.cs" Line="5" Column="14" />
+      <File FileName="Assets/Scripts/SaveData/PlayerData.cs" Line="30" Column="16" />
+      <File FileName="Assets/Scripts/Managers/PlayFabManager.cs" Line="94" Column="1" />
+      <File FileName="Assets/Scripts/Utils/Constants.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VRThesis" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="PlayFabSdk" expanded="True">
+                <Node name="PlayFabSDK" expanded="True">
+                  <Node name="Entity" expanded="True" />
+                  <Node name="Shared" expanded="True">
+                    <Node name="Internal" expanded="True">
+                      <Node name="PlayFabHttp" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="DataScripts" expanded="True" />
                 <Node name="Managers" expanded="True">
-                  <Node name="EventManager.cs" selected="True" />
+                  <Node name="PlayFabManager.cs" selected="True" />
                 </Node>
                 <Node name="PlayFab" expanded="True" />
                 <Node name="SaveData" expanded="True" />
                 <Node name="UI" expanded="True" />
                 <Node name="Utils" expanded="True" />
+              </Node>
+              <Node name="TextMesh Pro" expanded="True">
+                <Node name="Examples &amp; Extras" expanded="True">
+                  <Node name="Scripts" expanded="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
@@ -36,9 +50,15 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="09421052-3be3-4b8a-ba20-1de2078e85e0" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="92c67b12-97ba-4b91-b9ff-d55ac3338b0f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/Managers/PlayFabManager.cs" relfile="Assets/Scripts/Managers/PlayFabManager.cs" line="40" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/Managers/StaticDataManager.cs" relfile="Assets/Scripts/Managers/StaticDataManager.cs" line="25" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/UI/BoardUI.cs" relfile="Assets/Scripts/UI/BoardUI.cs" line="45" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/UI/BoardUI.cs" relfile="Assets/Scripts/UI/BoardUI.cs" line="72" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/Managers/GameManager.cs" relfile="Assets/Scripts/Managers/GameManager.cs" line="80" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

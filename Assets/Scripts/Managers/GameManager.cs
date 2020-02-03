@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int _currentLevelIndex;
     int _currentQuestionIndex = 0;
 
     string _recordedAnswer;
@@ -16,22 +15,51 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         EventManager.StartListening(EventNames.OnGameStart, StartGame);
+        EventManager.StartListening(EventNames.OnLevelLoaded, StartLevel);
         EventManager.StartListening(EventNames.RecordWord, RecordWord);
+        EventManager.StartListening(EventNames.ShowNextQuestion, NextQuestion);
     }
 
     private void OnDisable()
     {
         EventManager.StopListening(EventNames.OnGameStart, StartGame);
+        EventManager.StartListening(EventNames.OnLevelLoaded, StartLevel);
         EventManager.StopListening(EventNames.RecordWord, RecordWord);
+        EventManager.StopListening(EventNames.ShowNextQuestion, NextQuestion);
+
     }
 
     void StartGame(object data)
     {
+        Debug.Log("Game Started");
+        StartLevel(data);
+    }
+
+    void StartLevel(object data)
+    {
         _currentLevelData = (LevelData)data;
-        if(_currentLevelData._questions[_currentQuestionIndex] != null)
+        ShowQuestion();
+    }
+
+    void NextQuestion(object data)
+    {
+        _currentQuestionIndex++;
+        if (_currentQuestionIndex >= _currentLevelData._questions.Length)
+        {
+            EventManager.TriggerEvent(EventNames.LoadNextLevel,null);
+        }
+        else
+        {
+            ShowQuestion();
+        }
+    }
+
+    void ShowQuestion()
+    {
+        if (_currentLevelData._questions[_currentQuestionIndex] != null)
         {
             _currentQuestion = _currentLevelData._questions[_currentQuestionIndex];
-            EventManager.TriggerEvent(EventNames.ShowQuestion,(object)_currentQuestion);
+            EventManager.TriggerEvent(EventNames.ShowQuestion, (object)_currentQuestion);
         }
         else
         {
@@ -64,5 +92,9 @@ public class GameManager : MonoBehaviour
     {
         QuestionAnsweredEvenData questionAnsweredEvenData = new QuestionAnsweredEvenData(isCorrect, _recordedAnswer, _currentLevelData);
         EventManager.TriggerEvent(EventNames.QuestionAnswered, (object)questionAnsweredEvenData);
+        if (isCorrect)
+        {
+            EventManager.TriggerEvent(EventNames.UpdateScore,null);
+        }
     }
 }
