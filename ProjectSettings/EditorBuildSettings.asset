@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/GamePlay.unity
+    path: Assets/VRThesis/Scenes/GamePlay.unity
     guid: ced4433e417f64e9b9e687ff51a6e38e
   m_configObjects: {}

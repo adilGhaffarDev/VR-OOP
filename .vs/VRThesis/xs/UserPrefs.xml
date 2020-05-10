@@ -1,45 +1,49 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Managers/PlayFabManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Data/Level2.asset">
     <Files>
-      <File FileName="Assets/Scripts/Managers/SaveDataManager.cs" Line="16" Column="18" />
-      <File FileName="Assets/Scripts/UI/BoardUI.cs" Line="92" Column="67" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="12" Column="9" />
-      <File FileName="Assets/Scripts/Managers/StaticDataManager.cs" Line="24" Column="52" />
-      <File FileName="Assets/Scripts/UI/HelperUI.cs" Line="34" Column="6" />
-      <File FileName="Assets/Scripts/Utils/EventNames.cs" Line="9" Column="55" />
-      <File FileName="Assets/Scripts/DataScripts/LevelData.cs" Line="5" Column="14" />
-      <File FileName="Assets/Scripts/SaveData/PlayerData.cs" Line="30" Column="16" />
-      <File FileName="Assets/Scripts/Managers/PlayFabManager.cs" Line="94" Column="1" />
-      <File FileName="Assets/Scripts/Utils/Constants.cs" Line="1" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/Managers/EventManager.cs" Line="86" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/UI/HelperUI.cs" Line="106" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/DataScripts/LevelData.cs" Line="16" Column="14" />
+      <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" Line="140" Column="19" />
+      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" Line="265" Column="1" />
+      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInputModule.cs" Line="246" Column="1" />
+      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/PointerInputModule.cs" Line="324" Column="1" />
+      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" Line="532" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/Managers/GameManager.cs" Line="27" Column="48" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs" Line="41" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/Utils/EventNames.cs" Line="8" Column="23" />
+      <File FileName="Assets/VRThesis/Data/Level2.asset" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VRThesis" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="PlayFabSdk" expanded="True">
-                <Node name="PlayFabSDK" expanded="True">
-                  <Node name="Entity" expanded="True" />
-                  <Node name="Shared" expanded="True">
-                    <Node name="Internal" expanded="True">
-                      <Node name="PlayFabHttp" expanded="True" />
-                    </Node>
+              <Node name="Plugins" expanded="True">
+                <Node name="Android" expanded="True" />
+              </Node>
+              <Node name="Standard Assets" expanded="True">
+                <Node name="Characters" expanded="True">
+                  <Node name="FirstPersonCharacter" expanded="True">
+                    <Node name="Scripts" expanded="True" />
                   </Node>
                 </Node>
               </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="DataScripts" expanded="True" />
-                <Node name="Managers" expanded="True">
-                  <Node name="PlayFabManager.cs" selected="True" />
-                </Node>
-                <Node name="PlayFab" expanded="True" />
-                <Node name="SaveData" expanded="True" />
-                <Node name="UI" expanded="True" />
-                <Node name="Utils" expanded="True" />
+              <Node name="Supercyan Character Pack Free Sample" expanded="True">
+                <Node name="Scripts" expanded="True" />
               </Node>
-              <Node name="TextMesh Pro" expanded="True">
-                <Node name="Examples &amp; Extras" expanded="True">
-                  <Node name="Scripts" expanded="True" />
+              <Node name="VRThesis" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="Core" expanded="True" />
+                  <Node name="DataScripts" expanded="True" />
+                  <Node name="Interfaces" expanded="True" />
+                  <Node name="Level2Scripts" expanded="True" />
+                  <Node name="LevelActors" expanded="True" />
+                  <Node name="Managers" expanded="True" />
+                  <Node name="UI" expanded="True">
+                    <Node name="BoardUI.cs" selected="True" />
+                  </Node>
+                  <Node name="Utils" expanded="True" />
                 </Node>
               </Node>
             </Node>
@@ -50,14 +54,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="92c67b12-97ba-4b91-b9ff-d55ac3338b0f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5d3c169e-ced0-41d8-a3f6-1e97ea196752" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/Managers/PlayFabManager.cs" relfile="Assets/Scripts/Managers/PlayFabManager.cs" line="40" column="1" />
-      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/Managers/StaticDataManager.cs" relfile="Assets/Scripts/Managers/StaticDataManager.cs" line="25" column="1" />
-      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/UI/BoardUI.cs" relfile="Assets/Scripts/UI/BoardUI.cs" line="45" column="1" />
-      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/UI/BoardUI.cs" relfile="Assets/Scripts/UI/BoardUI.cs" line="72" column="1" />
-      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/Scripts/Managers/GameManager.cs" relfile="Assets/Scripts/Managers/GameManager.cs" line="80" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/Managers/GameManager.cs" relfile="Assets/VRThesis/Scripts/Managers/GameManager.cs" line="60" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/Managers/GameManager.cs" relfile="Assets/VRThesis/Scripts/Managers/GameManager.cs" line="48" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

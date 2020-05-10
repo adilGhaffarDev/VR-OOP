@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f18efdcb4fc46d1afe304d195fc1c0, type: 3}
+  m_Name: Level2
+  m_EditorClassIdentifier: 
+  _startLevelText:
+    _speeches:
+    - Good Job.
+  _errorLevelText:
+    _speeches:
+    - Wrong Answer, Try Again!
+  _endLevelText:
+    _speeches:
+    - Good Job!
+  _questions:
+  - _options:
+    - fox
+    - new
+    - ' Fox()'
+    - =
+    _answer: fox=new Fox()
+    _action: 
+    _actor: 
+    _objectsToBeInstantiated:
+    - _prefab: {fileID: 8582575390685558079, guid: d658844a52226467ebfe9c964ab1f4ec,
+        type: 3}
+      _position: {x: -10, y: -3, z: 12}
+      _scale: {x: 5, y: 5, z: 5}
+      _rotation: {x: 0, y: -160, z: 0}
+    _questionSpeech:
+      _speeches:
+      - In this level we will learn about objects and classes.
+      - Object is instance of a class.
+      - Your task is to create fox object from class Fox using new keyword.
+  - _options:
+    - fox
+    - .color
+    - red
+    - =
+    _answer: fox.color=red
+    _action: ChangeColor
+    _actor: FOX
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Objects have states and behaviours. For example fox object has states like
+        color and breed, and behaviours like walk and die.
+      - Your task is to change state color of fox from brown to red.
+  - _options:
+    - fox
+    - die()
+    - .
+    - =
+    _answer: fox.die()
+    _action: Die
+    _actor: FOX
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Your task is to kill the fox with behaviour Die.
+  _exercise:
+    _excerciseIntro:
+      _speeches:
+      - Good Job, you have completed Object and classes level. Answer follwong excercise
+        questions to check your knowledge.
+    _excerciseQuestions:
+    - _question: Which of following staement is correct.
+      _options:
+      - Object is instance of a class.
+      - Object is type of a class.
+      - Object is same as class.
+      _answer: 0
+    - _question: Color of fox is its ______
+      _options:
+      - behaviour
+      - state
+      - object
+      _answer: 1
+    - _question: die and walk are different _____ of fox
+      _options:
+      - behaviours
+      - states
+      - objects
+      _answer: 0
