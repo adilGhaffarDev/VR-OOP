@@ -85,6 +85,7 @@ public class HelperUI : MonoBehaviour
 
     public void ShowNextSpeechBubble()
     {
+       
         //if (!inBetweenLevel && !_audioSource.isPlaying)
         //{
 
