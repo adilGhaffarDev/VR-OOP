@@ -14,9 +14,7 @@ public class ActorFox : IActor
     {
         _meshRender.material = _redMat;
         yield return null;
-
     }
-
 
     IEnumerator WalkNoTarget()
     {
@@ -37,7 +35,6 @@ public class ActorFox : IActor
             distCovered = (Time.time - startTime) * 1;
             fractionOfJourney = distCovered / journeyLength;
             transform.localPosition = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
-
             yield return null;
         }
         yield return null;

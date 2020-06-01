@@ -133,12 +133,12 @@ public class GameManager : IManager
     {
         if(isExerciseQ)
         {
-            ExQuestionAnsweredEvenData questionAnsweredEvenData = new ExQuestionAnsweredEvenData(isCorrect, _currentLevelData, _currentExQuestion);
+            ExQuestionAnsweredEvenData questionAnsweredEvenData = new ExQuestionAnsweredEvenData(isCorrect, _currentLevelData, _currentExQuestion,_recordedAnswerList);
             EventManager.TriggerEvent(EventNames.QuestionAnswered, (object)questionAnsweredEvenData);
         }
         else
         {
-            QuestionAnsweredEvenData questionAnsweredEvenData = new QuestionAnsweredEvenData(isCorrect, _recordedAnswer, _currentLevelData, _currentQuestion);
+            QuestionAnsweredEvenData questionAnsweredEvenData = new QuestionAnsweredEvenData(isCorrect, _recordedAnswer, _currentLevelData, _currentQuestion, _recordedAnswerList);
             EventManager.TriggerEvent(EventNames.QuestionAnswered, (object)questionAnsweredEvenData);
             ClearRecordedAnswer();
             if(isCorrect)

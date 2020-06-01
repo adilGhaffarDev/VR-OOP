@@ -99,18 +99,21 @@ public class QuestionAnsweredEvenData
     string _answerGiven;
     LevelData _levelData;
     Question _question;
+    List<string> _recordedAnwerList;
 
     public bool IsCorrect => _isCorrect;
     public string AnswerGiven => _answerGiven;
     public LevelData LevelData => _levelData;
     public Question QuestionData => _question;
+    public List<string> RecodedAnswerList => _recordedAnwerList;
 
-    public QuestionAnsweredEvenData(bool isCorrect, string answerGiven, LevelData levelData, Question question)
+    public QuestionAnsweredEvenData(bool isCorrect, string answerGiven, LevelData levelData, Question question, List<string> recodedAnswerList)
     {
         _isCorrect = isCorrect;
         _answerGiven = answerGiven;
         _levelData = levelData;
         _question = question;
+        _recordedAnwerList = recodedAnswerList;
     }
 }
 
@@ -119,15 +122,18 @@ public class ExQuestionAnsweredEvenData
     bool _isCorrect;
     LevelData _levelData;
     ExerciseQuestion _question;
+    List<string> _recordedAnwerList;
 
     public bool IsCorrect => _isCorrect;
     public LevelData LevelData => _levelData;
     public ExerciseQuestion QuestionData => _question;
-
-    public ExQuestionAnsweredEvenData(bool isCorrect, LevelData levelData, ExerciseQuestion question)
+    public List<string> RecodedAnswerList => _recordedAnwerList;
+    
+    public ExQuestionAnsweredEvenData(bool isCorrect, LevelData levelData, ExerciseQuestion question, List<string> recodedAnswerList)
     {
         _isCorrect = isCorrect;
         _levelData = levelData;
         _question = question;
+        _recordedAnwerList = recodedAnswerList;
     }
 }

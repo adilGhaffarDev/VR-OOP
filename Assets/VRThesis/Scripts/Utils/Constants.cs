@@ -17,5 +17,8 @@ public static class Constants
 
     public static string PLAYFAB_STAT_SCORE = "SCORE_STAT";
 
+    public static string HELPER_SERVER_URI = "http://86.50.253.105:5000/predict";
+
+
 
 }

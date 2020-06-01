@@ -13,16 +13,17 @@ public class HelperUI : MonoBehaviour
 
     Question _currentQuestion;
 
-    int _speechIndex = 0;
+    HelperServer _helperServer;
 
-    //bool inBetweenLevel = false;
+    int _speechIndex = 0;
 
     int _speechIndexQ = 0;
 
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
-      
+        _helperServer = GetComponent<HelperServer>();
+        _helperServer._chatCallBack = OnResponseSuccessFromChatBot;
     }
 
     private void OnEnable()
@@ -30,7 +31,6 @@ public class HelperUI : MonoBehaviour
         EventManager.StartListening(EventNames.QuestionAnswered, OnQuestionAnswered);
         EventManager.StartListening(EventNames.OnLevelLoaded, ShowStartLevelSpeechBubbles);
         EventManager.StartListening(EventNames.ShowQuestion, OnNewQuestionLoaded);
-
     }
 
     private void OnDisable()
@@ -38,12 +38,10 @@ public class HelperUI : MonoBehaviour
         EventManager.StopListening(EventNames.QuestionAnswered, OnQuestionAnswered);
         EventManager.StartListening(EventNames.OnLevelLoaded, ShowStartLevelSpeechBubbles);
         EventManager.StopListening(EventNames.ShowQuestion, OnNewQuestionLoaded);
-
     }
 
     void OnQuestionAnswered(object data)
     {
-        //inBetweenLevel = true;
         if (data is QuestionAnsweredEvenData)
         {
             QuestionAnsweredEvenData questionAnsweredEvenData = data as QuestionAnsweredEvenData;
@@ -54,8 +52,10 @@ public class HelperUI : MonoBehaviour
             }
             else
             {
-                _helperText.text = _currentLevelData._errorLevelText._speeches[0];
-                StartCoroutine(DownloadAndPlaySpeech(_currentLevelData._errorLevelText._speeches[0]));
+
+                //_helperText.text = _currentLevelData._errorLevelText._speeches[0];
+                //StartCoroutine(DownloadAndPlaySpeech(_currentLevelData._errorLevelText._speeches[0]));
+                _helperServer.GetHelperResponse(PrepareErrorAnswerForServer(questionAnsweredEvenData.RecodedAnswerList));
             }
         }
         else
@@ -68,42 +68,24 @@ public class HelperUI : MonoBehaviour
             }
             else
             {
-                _helperText.text = _currentLevelData._errorLevelText._speeches[0];
-                StartCoroutine(DownloadAndPlaySpeech(_currentLevelData._errorLevelText._speeches[0]));
+                //_helperText.text = _currentLevelData._errorLevelText._speeches[0];
+                //StartCoroutine(DownloadAndPlaySpeech(_currentLevelData._errorLevelText._speeches[0]));
+                _helperServer.GetHelperResponse(PrepareErrorAnswerForServer(questionAnsweredEvenData.RecodedAnswerList));
+
             }
         }
-        
     }
 
     void ShowStartLevelSpeechBubbles(object data)
     {
-        //inBetweenLevel = false;
         _currentLevelData = (LevelData)data;
         _speechIndex = 0;
-        //ShowNextSpeechBubble();
     }
 
     public void ShowNextSpeechBubble()
     {
-       
-        //if (!inBetweenLevel && !_audioSource.isPlaying)
-        //{
-
-        //    if (_currentLevelData._startLevelText._speeches != null && _currentLevelData._startLevelText._speeches.Length > 0)
-        //    {
-        //        if (_speechIndex >= _currentLevelData._startLevelText._speeches.Length)
-        //        {
-        //            _speechIndex = 0;
-        //        }
-        //        _helperText.text = _currentLevelData._startLevelText._speeches[_speechIndex];
-        //        StartCoroutine(DownloadAndPlaySpeech(_currentLevelData._startLevelText._speeches[_speechIndex]));
-
-        //        _speechIndex++;
-        //    }
-        //}
         if (_currentQuestion != null)
         {
-
             if (!_audioSource.isPlaying)
             {
                 if (_currentQuestion._questionSpeech._speeches != null && _currentQuestion._questionSpeech._speeches.Length > 0)
@@ -114,7 +96,6 @@ public class HelperUI : MonoBehaviour
                     }
                     _helperText.text = _currentQuestion._questionSpeech._speeches[_speechIndexQ];
                     StartCoroutine(DownloadAndPlaySpeech(_currentQuestion._questionSpeech._speeches[_speechIndexQ]));
-
                     _speechIndexQ++;
                 }
             }
@@ -130,26 +111,24 @@ public class HelperUI : MonoBehaviour
     IEnumerator OnNewQuestionLoadedRout(object data)
     {
         yield return new WaitForSeconds(2);
-        //if (!_audioSource.isPlaying)
+        if (data is Question)
         {
-            if (data is Question)
+            _currentQuestion = (Question)data;
+            if (_currentQuestion != null)
             {
-                 _currentQuestion = (Question)data;
-                if (_currentQuestion != null)
-                {
-                    ShowNextSpeechBubble();
-                    //foreach (var item in _currentQuestion._questionSpeech._speeches)
-                    //{
-                    //    _helperText.text = item;
-                    //    StartCoroutine(DownloadAndPlaySpeech(item));
-                    //}
-                }
-                else
-                {
-                    GameUtils.Log("No questions in current level!");
-                }
+                ShowNextSpeechBubble();
+            }
+            else
+            {
+                GameUtils.Log("No questions in current level!");
             }
         }
+    }
+
+    void OnResponseSuccessFromChatBot(string response)
+    {
+        _helperText.text = response;
+        StartCoroutine(DownloadAndPlaySpeech(response));
     }
 
     string voiceRSSapiKey = "39c2b2b055494503a9ac6cce0ebce648";
@@ -178,5 +157,13 @@ public class HelperUI : MonoBehaviour
         }
     }
 
-    
+    string PrepareErrorAnswerForServer(List<string> ans)
+    {
+        string returnString = "";
+        foreach (var s in ans)
+        {
+            returnString += s + " ";
+        }
+        return returnString;
+    }
 }

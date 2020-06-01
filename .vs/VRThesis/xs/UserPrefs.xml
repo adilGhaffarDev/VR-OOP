@@ -1,51 +1,35 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Scripts/VR/ReticleShader.shader">
     <Files>
-      <File FileName="Assets/VRThesis/Scripts/Managers/EventManager.cs" Line="86" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/Managers/EventManager.cs" Line="117" Column="1" />
       <File FileName="Assets/VRThesis/Scripts/UI/HelperUI.cs" />
-      <File FileName="Assets/VRThesis/Scripts/DataScripts/LevelData.cs" />
       <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/ExecuteEvents.cs" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/BaseInputModule.cs" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/PointerInputModule.cs" />
-      <File FileName="../../../../../../Applications/Unity/Hub/Editor/2019.2.9f1/Unity.app/Contents/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/EventSystem/InputModules/StandaloneInputModule.cs" />
+      <File FileName="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" />
       <File FileName="Assets/VRThesis/Scripts/Managers/GameManager.cs" />
-      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs" Line="23" Column="1" />
-      <File FileName="Assets/VRThesis/Scripts/Utils/EventNames.cs" />
-      <File FileName="Assets/VRThesis/Data/Level2.asset" />
+      <File FileName="Assets/VRThesis/XRControls/PrimaryButtonWatcher.cs" />
       <File FileName="Assets/test.cs" />
-      <File FileName="Assets/Plugins/Android/TextToSpeech.cs" />
+      <File FileName="Assets/VRThesis/XRControls/PrimaryReactor.cs" />
+      <File FileName="Assets/VRThesis/Scripts/Core/Main.cs" />
+      <File FileName="Assets/VRThesis/Scripts/Utils/Constants.cs" />
+      <File FileName="Library/PackageCache/com.unity.xr.interaction.toolkit@0.0.6-preview/Runtime/XR/XRRig.cs" />
+      <File FileName="Assets/VRThesis/Scripts/VR/Reticle.cs" Line="34" Column="43" />
+      <File FileName="Assets/VRThesis/Scripts/VR/ReticleShader.shader" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VRThesis" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Plugins" expanded="True">
-                <Node name="Android" expanded="True" />
-              </Node>
-              <Node name="Standard Assets" expanded="True">
-                <Node name="Characters" expanded="True">
-                  <Node name="FirstPersonCharacter" expanded="True">
-                    <Node name="Scripts" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="Supercyan Character Pack Free Sample" expanded="True">
-                <Node name="Scripts" expanded="True" />
-              </Node>
+              <Node name="Standard Assets" expanded="True" />
               <Node name="VRThesis" expanded="True">
                 <Node name="Scripts" expanded="True">
-                  <Node name="Core" expanded="True" />
-                  <Node name="DataScripts" expanded="True" />
-                  <Node name="Interfaces" expanded="True" />
-                  <Node name="Level2Scripts" expanded="True" />
-                  <Node name="LevelActors" expanded="True">
-                    <Node name="ActorFox.cs" selected="True" />
-                  </Node>
+                  <Node name="HelperChatbot" expanded="True" />
                   <Node name="Managers" expanded="True" />
                   <Node name="UI" expanded="True" />
                   <Node name="Utils" expanded="True" />
+                  <Node name="VR" expanded="True">
+                    <Node name="ReticleShader.shader" selected="True" />
+                  </Node>
                 </Node>
               </Node>
             </Node>
@@ -56,11 +40,16 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d716137b-5675-44dc-9926-7a2e9a72d195" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2fae5cb8-460e-45ed-9133-0fb1d7e11f6c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/Managers/GameManager.cs" relfile="Assets/VRThesis/Scripts/Managers/GameManager.cs" line="60" column="1" />
       <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/Managers/GameManager.cs" relfile="Assets/VRThesis/Scripts/Managers/GameManager.cs" line="48" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="29" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="39" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="49" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="44" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="42" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
