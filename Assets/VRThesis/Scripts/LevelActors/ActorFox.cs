@@ -42,14 +42,25 @@ public class ActorFox : IActor
 
     IEnumerator WalkTowardsTarget()
     {
+        Vector3 targetTreePosition = transform.parent.GetComponent<ObjectInstantiator>().GetSecondTreePosition(gameObject.transform);///new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 6);
+
         Animator animator = GetComponent<Animator>();
         animator.Play("walk");
-        Vector3 targetPosition = transform.parent.GetComponent<ObjectInstantiator>().GetSecondTreePosition(gameObject.transform);///new Vector3(transform.localPosition.x, transform.localPosition.y, transform.localPosition.z - 6);
+        float startTime = Time.time;
+
+        Vector3 targetPosition = new Vector3(targetTreePosition.x, transform.localPosition.y, transform.localPosition.z);
 
         Vector3 startPosition = transform.localPosition;
-        while (transform.localPosition.z > targetPosition.z)
+
+        float journeyLength = Vector3.Distance(targetPosition, startPosition);
+        float distCovered = (Time.time - startTime) * 1;
+        float fractionOfJourney = distCovered / journeyLength;
+
+        while (transform.localPosition.x < targetPosition.x)
         {
-            transform.localPosition = Vector3.Lerp(startPosition, targetPosition, 5*Time.deltaTime);
+            distCovered = (Time.time - startTime) * 1;
+            fractionOfJourney = distCovered / journeyLength;
+            transform.localPosition = Vector3.Lerp(startPosition, targetPosition, fractionOfJourney);
             yield return null;
         }
         yield return null;
@@ -67,6 +78,7 @@ public class ActorFox : IActor
     {
         StopAllCoroutines();
         gameObject.SetActive(false);
+        Destroy(gameObject);
         yield return null;
     }
 }

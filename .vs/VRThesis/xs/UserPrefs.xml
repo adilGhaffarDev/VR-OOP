@@ -1,19 +1,15 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Scripts/VR/ReticleShader.shader">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs">
     <Files>
       <File FileName="Assets/VRThesis/Scripts/Managers/EventManager.cs" Line="117" Column="1" />
       <File FileName="Assets/VRThesis/Scripts/UI/HelperUI.cs" />
-      <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" />
-      <File FileName="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" />
-      <File FileName="Assets/VRThesis/Scripts/Managers/GameManager.cs" />
-      <File FileName="Assets/VRThesis/XRControls/PrimaryButtonWatcher.cs" />
-      <File FileName="Assets/test.cs" />
-      <File FileName="Assets/VRThesis/XRControls/PrimaryReactor.cs" />
-      <File FileName="Assets/VRThesis/Scripts/Core/Main.cs" />
-      <File FileName="Assets/VRThesis/Scripts/Utils/Constants.cs" />
-      <File FileName="Library/PackageCache/com.unity.xr.interaction.toolkit@0.0.6-preview/Runtime/XR/XRRig.cs" />
-      <File FileName="Assets/VRThesis/Scripts/VR/Reticle.cs" Line="34" Column="43" />
-      <File FileName="Assets/VRThesis/Scripts/VR/ReticleShader.shader" Line="47" Column="21" />
+      <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" Line="53" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" Line="1" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorTree.cs" Line="7" Column="29" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorPrincess.cs" Line="10" Column="35" />
+      <File FileName="Assets/VRThesis/Scripts/Managers/ObjectInstantiator.cs" Line="46" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorHouse.cs" Line="9" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -24,12 +20,13 @@
               <Node name="VRThesis" expanded="True">
                 <Node name="Scripts" expanded="True">
                   <Node name="HelperChatbot" expanded="True" />
+                  <Node name="LevelActors" expanded="True">
+                    <Node name="ActorFox.cs" selected="True" />
+                  </Node>
                   <Node name="Managers" expanded="True" />
                   <Node name="UI" expanded="True" />
                   <Node name="Utils" expanded="True" />
-                  <Node name="VR" expanded="True">
-                    <Node name="ReticleShader.shader" selected="True" />
-                  </Node>
+                  <Node name="VR" expanded="True" />
                 </Node>
               </Node>
             </Node>
@@ -50,6 +47,7 @@
       <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="49" column="1" />
       <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="44" column="1" />
       <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" relfile="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" line="42" column="1" />
+      <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/UI/BoardUI.cs" relfile="Assets/VRThesis/Scripts/UI/BoardUI.cs" line="75" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />

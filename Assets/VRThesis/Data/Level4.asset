@@ -45,7 +45,7 @@ MonoBehaviour:
     - .say(
     _answer: "princess.say(\u201CI am Zetta\u201D)"
     _action: ShowSpeechBubble
-    _actor: Princess
+    _actor: princess1
     _objectsToBeInstantiated: []
     _questionSpeech:
       _speeches:

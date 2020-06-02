@@ -7,14 +7,14 @@ public class ObjectInstantiator : IWorldView
     [SerializeField]
     Transform _parentOfObjects;
 
-    List<GameObject> _objectsInScene = new List<GameObject>();
+    List<IActor> _objectsInScene = new List<IActor>();
+    Dictionary<string,object> _sceneData = new Dictionary<string, object>();
 
     public override void Initialize(ManagerContainer managerContainer)
     {
         base.Initialize(managerContainer);
         EventManager.StartListening(EventNames.QuestionAnswered, OnQuestionAnswered);
         EventManager.StartListening(EventNames.OnLevelLoaded, CleanLastLevel);
-
     }
 
     void OnQuestionAnswered(object data)
@@ -26,15 +26,17 @@ public class ObjectInstantiator : IWorldView
             {
                 if (questionAnsweredEvenData.QuestionData._objectsToBeInstantiated != null)
                 {
+                    int indexInstantiate = 1;
                     foreach (var obj in questionAnsweredEvenData.QuestionData._objectsToBeInstantiated)
                     {
                         GameObject go = Instantiate(obj._prefab, _parentOfObjects);
-                        go.name = obj._prefab.name;
+                        go.name = questionAnsweredEvenData.RecodedAnswerList[0] + indexInstantiate.ToString();
                         go.transform.localPosition = obj._position;
                         go.transform.localScale = obj._scale;
                         go.transform.localRotation = Quaternion.Euler(obj._rotation);
                         go.SetActive(true);
-                        _objectsInScene.Add(go);
+                        _objectsInScene.Add(go.GetComponent<IActor>());
+                        indexInstantiate++;
                     }
 
                 }
@@ -52,7 +54,7 @@ public class ObjectInstantiator : IWorldView
     {
         foreach(var ob in _objectsInScene)
         {
-            Destroy(ob);
+            Destroy(ob.gameObject);
         }
         _objectsInScene.Clear();
     }
@@ -69,10 +71,10 @@ public class ObjectInstantiator : IWorldView
         Vector3 positionVector = Vector3.zero;
         foreach (var ob in _objectsInScene)
         {
-            if(ob.name == "Palm_Tree")
+            if(ob is ActorTree)
             {
                 float newDist = Vector3.Distance(refObject.localPosition,ob.transform.localPosition);
-                if(newDist< dist)
+                if(newDist > dist)
                 {
                     dist = newDist;
                     positionVector = ob.transform.localPosition;
@@ -80,5 +82,10 @@ public class ObjectInstantiator : IWorldView
             }
         }
         return positionVector;
+    }
+
+    public void ChangePosition(GameObject go)
+    {
+        go.transform.localPosition = new Vector3(go.transform.localPosition.x + 3, go.transform.localPosition.y, go.transform.localPosition.z);
     }
 }

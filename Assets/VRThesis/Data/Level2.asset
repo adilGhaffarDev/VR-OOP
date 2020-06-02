@@ -48,7 +48,7 @@ MonoBehaviour:
     - =
     _answer: fox.color=red
     _action: ChangeColor
-    _actor: FOX
+    _actor: fox1
     _objectsToBeInstantiated: []
     _questionSpeech:
       _speeches:
@@ -62,7 +62,7 @@ MonoBehaviour:
     - =
     _answer: fox.die()
     _action: Die
-    _actor: FOX
+    _actor: fox1
     _objectsToBeInstantiated: []
     _questionSpeech:
       _speeches:

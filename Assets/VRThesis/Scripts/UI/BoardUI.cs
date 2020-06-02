@@ -49,6 +49,8 @@ public class BoardUI : MonoBehaviour
                 for (int i = 0; i < question._options.Length; i++)
                 {
                     GameObject opGo = Instantiate(_optionPrefab, _optionsParent);
+                    opGo.name = "option" + i.ToString();
+
                     string opString = question._options[i];
                     opGo.GetComponentInChildren<TextMeshProUGUI>().text = opString;
                     opGo.GetComponent<Button>().onClick.AddListener(() => OnOptionClick(opString));
@@ -71,6 +73,7 @@ public class BoardUI : MonoBehaviour
                 for (int i = 0; i < question._options.Length; i++)
                 {
                     GameObject opGo = Instantiate(_optionPrefab, _optionsParent);
+                    opGo.name = "option" + i.ToString();
                     string opString = question._options[i];
                     opGo.GetComponentInChildren<TextMeshProUGUI>().text = opString;
                     int ind = i;

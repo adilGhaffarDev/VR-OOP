@@ -94,7 +94,7 @@ MonoBehaviour:
     - =
     _answer: fox.walk()
     _action: WalkNoTarget
-    _actor: FOX
+    _actor: fox1
     _objectsToBeInstantiated: []
     _questionSpeech:
       _speeches:
@@ -106,7 +106,7 @@ MonoBehaviour:
     - die()
     _answer: fox.die()
     _action: Die
-    _actor: FOX
+    _actor: fox1
     _objectsToBeInstantiated: []
     _questionSpeech:
       _speeches:
@@ -119,12 +119,102 @@ MonoBehaviour:
     - )
     _answer: destroy(fox)
     _action: Destroy
-    _actor: FOX
+    _actor: fox1
     _objectsToBeInstantiated: []
     _questionSpeech:
       _speeches:
       - Great! Your fox is dead, now remove it from the environment!. You can do so
         by passing the object 'fox' as a parameter to the function 'destroy'
+  - _options:
+    - new
+    - fox
+    - =
+    - ' Fox()'
+    _answer: fox=new Fox()
+    _action: 
+    _actor: 
+    _objectsToBeInstantiated:
+    - _prefab: {fileID: 8582575390685558079, guid: d658844a52226467ebfe9c964ab1f4ec,
+        type: 3}
+      _position: {x: -10, y: -3, z: 12}
+      _scale: {x: 5, y: 5, z: 5}
+      _rotation: {x: 0, y: -265, z: 0}
+    _questionSpeech:
+      _speeches:
+      - Good Job!. Your task is to instantiate a fox again from the class Fox(), use
+        the keyword 'new'
+  - _options:
+    - =
+    - get_Position()
+    - tree2
+    - .
+    - position2
+    _answer: position2=tree2.get_Position()
+    _action: get_Position
+    _actor: tree2
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Good! The fox is here!Let's get it to walk from the tree near you to the other
+        tree. first let's get the position of the second tree and store it in the
+        variable 'position2'.
+  - _options:
+    - =
+    - get_Position()
+    - tree1
+    - .
+    - position1
+    _answer: position1=tree1.get_Position()
+    _action: get_Position
+    _actor: tree1
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Good! position2 variable holds the position of the second tree. let's do the
+        same for tree1 and get its position in the variable 'position1'
+  - _options:
+    - tree2
+    - .
+    - set_Position(
+    - )
+    - 5
+    _answer: tree2.set_Position(5)
+    _action: set_Position
+    _actor: tree2
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Good! let's practice the setters now!. Use the setter set_Position(int position)
+        to change the location of tree 2 and put it a little bit farther from tree
+        1
+  - _options:
+    - fox
+    - walk(
+    - .
+    - position2)
+    - position1,
+    _answer: fox.walk(position1,position2)
+    _action: WalkTowardsTarget
+    _actor: fox1
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Great! tree2 is now repositioned!. use the walk() behavior of the fox and
+        the variables position 1 and position 2 as parameters to make your fox walk
+        from tree1 to tree2
+  - _options:
+    - fox
+    - destroy
+    - (
+    - )
+    _answer: destroy(fox)
+    _action: Destroy
+    _actor: fox1
+    _objectsToBeInstantiated: []
+    _questionSpeech:
+      _speeches:
+      - Now remove it from the environment!. You can do so by passing the object 'fox'
+        as a parameter to the function 'destroy'
   _exercise:
     _excerciseIntro:
       _speeches: []
