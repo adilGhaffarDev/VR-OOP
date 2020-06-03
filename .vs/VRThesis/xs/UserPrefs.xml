@@ -1,28 +1,34 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleVR/Scripts/EventSystem/GvrPointerGraphicRaycaster.cs">
     <Files>
       <File FileName="Assets/VRThesis/Scripts/Managers/EventManager.cs" Line="117" Column="1" />
       <File FileName="Assets/VRThesis/Scripts/UI/HelperUI.cs" />
-      <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" Line="53" Column="1" />
-      <File FileName="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" Line="1" Column="1" />
-      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorTree.cs" Line="7" Column="29" />
-      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorPrincess.cs" Line="10" Column="35" />
-      <File FileName="Assets/VRThesis/Scripts/Managers/ObjectInstantiator.cs" Line="46" Column="1" />
-      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorHouse.cs" Line="9" Column="1" />
-      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs" Line="1" Column="1" />
+      <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" />
+      <File FileName="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorTree.cs" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorPrincess.cs" />
+      <File FileName="Assets/VRThesis/Scripts/Managers/ObjectInstantiator.cs" Line="57" Column="36" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorHouse.cs" />
+      <File FileName="Assets/VRThesis/Scripts/LevelActors/ActorFox.cs" />
+      <File FileName="Assets/GoogleVR/Scripts/EventSystem/GvrPointerGraphicRaycaster.cs" Line="48" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VRThesis" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="GoogleVR" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="EventSystem" expanded="True">
+                    <Node name="GvrPointerGraphicRaycaster.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Standard Assets" expanded="True" />
               <Node name="VRThesis" expanded="True">
                 <Node name="Scripts" expanded="True">
                   <Node name="HelperChatbot" expanded="True" />
-                  <Node name="LevelActors" expanded="True">
-                    <Node name="ActorFox.cs" selected="True" />
-                  </Node>
+                  <Node name="LevelActors" expanded="True" />
                   <Node name="Managers" expanded="True" />
                   <Node name="UI" expanded="True" />
                   <Node name="Utils" expanded="True" />
