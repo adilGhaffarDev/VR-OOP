@@ -54,7 +54,10 @@ public class ObjectInstantiator : IWorldView
     {
         foreach(var ob in _objectsInScene)
         {
-            Destroy(ob.gameObject);
+            if(ob!=null)
+            {
+                Destroy(ob.gameObject);
+            }
         }
         _objectsInScene.Clear();
     }

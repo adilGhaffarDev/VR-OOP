@@ -13,6 +13,7 @@ public class PlayFabLogin : MonoBehaviour
 
     void Awake()
     {
+        EventManager.TriggerEvent(EventNames.ShowLoadingScreen, null);
 #if UNITY_EDITOR
         if (!PlayerPrefs.HasKey(PlayerIdKey))
         {
@@ -22,7 +23,7 @@ public class PlayFabLogin : MonoBehaviour
         var playerId = PlayerPrefs.GetString(PlayerIdKey);
         CustomId = playerId;
         Debug.Log("Player Editor ID " + playerId);
-        var request = new LoginWithCustomIDRequest { CustomId = playerId, CreateAccount = true, InfoRequestParameters = new GetPlayerCombinedInfoRequestParams { GetTitleData = true } };
+        var request = new LoginWithCustomIDRequest { CustomId = playerId, CreateAccount = true, InfoRequestParameters = new GetPlayerCombinedInfoRequestParams { GetTitleData = true, GetUserData  = true} };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
 
 #elif UNITY_IOS
@@ -30,7 +31,7 @@ public class PlayFabLogin : MonoBehaviour
 		{
 			CreateAccount = true, DeviceId = SystemInfo.deviceUniqueIdentifier, DeviceModel = SystemInfo.deviceModel,
 			OS = SystemInfo.operatingSystem,
-			InfoRequestParameters = new GetPlayerCombinedInfoRequestParams { GetTitleData = true }
+			InfoRequestParameters = new GetPlayerCombinedInfoRequestParams { GetTitleData = true , GetUserData  = true}
 		};
 		PlayFabClientAPI.LoginWithIOSDeviceID(request, OnLoginSuccess, OnLoginFailure);
 
@@ -39,7 +40,7 @@ public class PlayFabLogin : MonoBehaviour
 		{
 			CreateAccount = true, AndroidDeviceId = SystemInfo.deviceUniqueIdentifier,
 			AndroidDevice = SystemInfo.deviceModel, OS = SystemInfo.operatingSystem,
-			InfoRequestParameters = new GetPlayerCombinedInfoRequestParams { GetTitleData = true }
+			InfoRequestParameters = new GetPlayerCombinedInfoRequestParams { GetTitleData = true, GetUserData  = true }
 		};
 	    PlayFabClientAPI.LoginWithAndroidDeviceID(request, OnLoginSuccess, OnLoginFailure);
 #else
@@ -49,12 +50,16 @@ public class PlayFabLogin : MonoBehaviour
 
     private void OnLoginSuccess(LoginResult result)
     {
+        EventManager.TriggerEvent(EventNames.HideLoadingScreen, null);
+
         EventManager.TriggerEvent(EventNames.OnUserLoggedIn, result);
         GameUtils.Log("Congratulations, you made your first successful API call!");
     }
 
     private void OnLoginFailure(PlayFabError error)
     {
+        EventManager.TriggerEvent(EventNames.HideLoadingScreen, null);
+
         GameUtils.Log("Something went wrong with your first API call.  :(");
         GameUtils.Log("Here's some debug information:");
         GameUtils.Log(error.GenerateErrorReport());

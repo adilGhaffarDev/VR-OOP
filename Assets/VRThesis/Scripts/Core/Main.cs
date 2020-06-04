@@ -16,6 +16,7 @@ public class Main : MonoBehaviour
     StaticDataManager _staticDataManager;
 
     IWorldView[] _worldViews;
+    ICanvasUI[] _canvasViews;
 
     LoginResult _loginResult;
 
@@ -23,11 +24,13 @@ public class Main : MonoBehaviour
     {
         Cursor.visible = true;
         EventManager.StartListening(EventNames.OnUserLoggedIn, StartServices);
+        EventManager.StartListening(EventNames.OnGameStart, StartGame);
     }
 
     private void OnDisable()
     {
         EventManager.StopListening(EventNames.OnUserLoggedIn, StartServices);
+        EventManager.StopListening(EventNames.OnGameStart, StartGame);
     }
 
     void StartServices(object data)
@@ -38,11 +41,20 @@ public class Main : MonoBehaviour
             CreateServices();
             BindServices();
             InitializeWorldViews();
-            StartGame();
+            InitializeUI();
         }
         else
         {
             Debug.Log("login Failed");
+        }
+    }
+
+    void InitializeUI()
+    {
+        _canvasViews = GameObject.FindObjectsOfType<ICanvasUI>();
+        foreach (var item in _canvasViews)
+        {
+            item.Initialize(_managerContainer);
         }
     }
 
@@ -76,19 +88,19 @@ public class Main : MonoBehaviour
         _staticDataManager.Load();
     }
 
-    void StartGame()
+    void StartGame(object data)
     {
         if (_loginResult != null)
         {
-            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_USERNAME, out string userName);
-            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_SCORE, out string userScore);
-            _loginResult.InfoResultPayload.TitleData.TryGetValue(Constants.PF_KEY_LEVEL, out string userLevel);
+            _loginResult.InfoResultPayload.UserData.TryGetValue(Constants.PF_KEY_USERNAME, out UserDataRecord userName);
+            _loginResult.InfoResultPayload.UserData.TryGetValue(Constants.PF_KEY_SCORE, out UserDataRecord userScore);
+            _loginResult.InfoResultPayload.UserData.TryGetValue(Constants.PF_KEY_LEVEL, out UserDataRecord userLevel);
 
-            userName = userName == null ? "user" : userName;
-            userScore = userScore == null ? "0" : userScore;
-            userLevel = userLevel == null ? "0" : userLevel;
+            string userNameS = userName == null ? "user" : userName.Value;
+            string userScoreS = userScore == null ? "0" : userScore.Value;
+            string userLevelS = userLevel == null ? "0" : userLevel.Value;
 
-            PlayerData playerData = new PlayerData(_loginResult.PlayFabId, userName, int.Parse(userScore), int.Parse(userLevel));
+            PlayerData playerData = new PlayerData(_loginResult.PlayFabId, userNameS, int.Parse(userScoreS), int.Parse(userLevelS));
 
             EventManager.TriggerEvent(EventNames.OnUserdataLoaded, (object)playerData);
         }

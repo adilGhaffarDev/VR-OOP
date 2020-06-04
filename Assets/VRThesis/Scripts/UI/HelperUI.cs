@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 
-public class HelperUI : MonoBehaviour
+public class HelperUI : ICanvasUI
 {
     [SerializeField]
     TextMeshProUGUI _helperText;

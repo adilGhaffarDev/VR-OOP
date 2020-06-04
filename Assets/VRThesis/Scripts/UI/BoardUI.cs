@@ -3,14 +3,30 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class BoardUI : MonoBehaviour
+public class BoardUI : ICanvasUI
 {
     [SerializeField]
     Button _startButton;
 
     [SerializeField]
-    Button _resetButton;
+    Button _restartGameButton;
+
+    [SerializeField]
+    Button _quitGameButton;
+
+    [SerializeField]
+    Button _levelsButton;
+
+    [SerializeField]
+    Button _resetAnswerButton;
+
+    [SerializeField]
+    LoadingPanel _loadingScreen;
+
+    [SerializeField]
+    LevelsPanel _levelScreen;
 
     [SerializeField]
     GameObject _optionPrefab;
@@ -28,14 +44,58 @@ public class BoardUI : MonoBehaviour
         EventManager.StartListening(EventNames.ShowQuestion, SetBoard);
         EventManager.StartListening(EventNames.QuestionAnswered, OnQuestionAnswered);
         EventManager.StartListening(EventNames.GameOver, GameOver);
-
+        EventManager.StartListening(EventNames.ShowLoadingScreen, ShowLoadingScreen);
+        EventManager.StartListening(EventNames.HideLoadingScreen, HideLoadingScreen);
     }
 
     private void OnDisable()
     {
         EventManager.StopListening(EventNames.ShowQuestion, SetBoard);
         EventManager.StopListening(EventNames.QuestionAnswered, OnQuestionAnswered);
+        EventManager.StopListening(EventNames.GameOver, GameOver);
+        EventManager.StopListening(EventNames.ShowLoadingScreen, ShowLoadingScreen);
+        EventManager.StopListening(EventNames.HideLoadingScreen, HideLoadingScreen);
+    }
 
+    private void Start()
+    {
+        AddButtonListeners();
+    }
+
+    void AddButtonListeners()
+    {
+        _resetAnswerButton.onClick.AddListener(() => OnResetAnswer());
+        _startButton.onClick.AddListener(() => StartGame());
+        _restartGameButton.onClick.AddListener(() => RestartGame());
+        _quitGameButton.onClick.AddListener(() => QuitGame());
+        _levelsButton.onClick.AddListener(() => ShowLevelScreen());
+    }
+
+    void ShowLevelScreen()
+    {
+        _levelScreen.ShowSelf(_managerContainer.Resolve<StaticDataManager>().GetAllLevels());
+    }
+
+    void RestartGame()
+    {
+        //SceneManager.LoadScene("GamePlay");
+        EventManager.TriggerEvent(EventNames.LoadGivenLevel, 0);
+    }
+
+    void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    void OnResetAnswer()
+    {
+        _answerPan.text = "";
+        EventManager.TriggerEvent(EventNames.ClearAnswer, null);
+    }
+
+    void StartGame()
+    {
+        EventManager.TriggerEvent(EventNames.OnGameStart, null);
     }
 
     void SetBoard(object data)
@@ -140,11 +200,9 @@ public class BoardUI : MonoBehaviour
             }
             else
             {
-                //_answerPan.text = "Loading Next Question..";
                 StartCoroutine("LoadNextQuestion");
             }
         }
-       
     }
 
     IEnumerator LoadNextQuestion()
@@ -168,5 +226,15 @@ public class BoardUI : MonoBehaviour
     void GameOver(object data)
     {
         _answerPan.text = "Game Over!!";
+    }
+
+    void ShowLoadingScreen(object data)
+    {
+        _loadingScreen.ShowSelf(null);
+    }
+
+    void HideLoadingScreen(object data)
+    {
+        _loadingScreen.HideSelf();
     }
 }

@@ -25,6 +25,8 @@ public class GameManager : IManager
         EventManager.StartListening(EventNames.OnLevelLoaded, StartLevel);
         EventManager.StartListening(EventNames.RecordWord, RecordWord);
         EventManager.StartListening(EventNames.ShowNextQuestion, NextQuestion);
+        EventManager.StartListening(EventNames.ClearAnswer, ClearRecordedAnswer);
+
     }
 
     public void Cleanup()
@@ -32,10 +34,13 @@ public class GameManager : IManager
         EventManager.StopListening(EventNames.OnLevelLoaded, StartLevel);
         EventManager.StopListening(EventNames.RecordWord, RecordWord);
         EventManager.StopListening(EventNames.ShowNextQuestion, NextQuestion);
+        EventManager.StopListening(EventNames.ClearAnswer, ClearRecordedAnswer);
+
     }
 
     void StartLevel(object data)
     {
+        ClearRecordedAnswer(null);
         _currentQuestionIndex = 0;
         _currentExQuestionIndex = -1;
         _currentLevelData = (LevelData)data;
@@ -140,18 +145,18 @@ public class GameManager : IManager
         {
             QuestionAnsweredEvenData questionAnsweredEvenData = new QuestionAnsweredEvenData(isCorrect, _recordedAnswer, _currentLevelData, _currentQuestion, _recordedAnswerList);
             EventManager.TriggerEvent(EventNames.QuestionAnswered, (object)questionAnsweredEvenData);
-            ClearRecordedAnswer();
+            ClearRecordedAnswer(null);
             if(isCorrect)
             {
                 _currentQuestionIndex++;
             }
         }
-
     }
 
-    void ClearRecordedAnswer()
+    void ClearRecordedAnswer(object data)
     {
-        _recordedAnswerList.Clear();
+        if(_recordedAnswerList != null)
+            _recordedAnswerList.Clear();
         _recordedAnswer = "";
     }
 

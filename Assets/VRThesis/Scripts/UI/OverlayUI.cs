@@ -2,18 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OverlayUI : MonoBehaviour
+public class OverlayUI : ICanvasUI
 {
     [SerializeField]
-    LoadingPanel _loadingPanel;
-
-    [SerializeField]
     UserInfoPanel _userInfoPanel;
-
-    private void Awake()
-    {
-        _loadingPanel.ShowSelf(null);
-    }
 
     private void OnEnable()
     {
@@ -29,13 +21,11 @@ public class OverlayUI : MonoBehaviour
 
     void SetUserDataUI(object data)
     {
-        _loadingPanel.HideSelf();
         _userInfoPanel.ShowSelf(data);
     }
 
     void UpdateUI(object data)
     {
         _userInfoPanel.UpdateUI(data);
-
     }
 }
