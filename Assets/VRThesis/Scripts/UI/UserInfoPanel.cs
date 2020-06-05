@@ -36,7 +36,7 @@ public class UserInfoPanel : PanelScript
             PlayerData playerData = (PlayerData)data;
             _userName.text = playerData.GetName();
             _userScore.text = playerData.GetScore().ToString();
-            _userLevel.text = playerData.GetLevel().ToString();
+            _userLevel.text = (playerData.GetLevel()+1).ToString();
         }
         else
         {

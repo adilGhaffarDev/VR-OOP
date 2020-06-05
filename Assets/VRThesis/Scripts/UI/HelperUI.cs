@@ -9,6 +9,9 @@ public class HelperUI : ICanvasUI
     [SerializeField]
     TextMeshProUGUI _helperText;
 
+    [SerializeField]
+    GameObject _agent;
+
     LevelData _currentLevelData;
 
     Question _currentQuestion;
@@ -31,6 +34,8 @@ public class HelperUI : ICanvasUI
         EventManager.StartListening(EventNames.QuestionAnswered, OnQuestionAnswered);
         EventManager.StartListening(EventNames.OnLevelLoaded, ShowStartLevelSpeechBubbles);
         EventManager.StartListening(EventNames.ShowQuestion, OnNewQuestionLoaded);
+        EventManager.StartListening(EventNames.OnGameStart, ShowAgent);
+
     }
 
     private void OnDisable()
@@ -38,8 +43,13 @@ public class HelperUI : ICanvasUI
         EventManager.StopListening(EventNames.QuestionAnswered, OnQuestionAnswered);
         EventManager.StartListening(EventNames.OnLevelLoaded, ShowStartLevelSpeechBubbles);
         EventManager.StopListening(EventNames.ShowQuestion, OnNewQuestionLoaded);
-    }
+        EventManager.StopListening(EventNames.OnGameStart, ShowAgent);
 
+    }
+    void ShowAgent(object data)
+    {
+        _agent.SetActive(true);
+    }
     void OnQuestionAnswered(object data)
     {
         if (data is QuestionAnsweredEvenData)

@@ -62,6 +62,7 @@ public class StaticDataManager : IManager
             int levelIndex = (int)data;
             LevelData levelData = _levelsData.GetLevelData(levelIndex);
             EventManager.TriggerEvent(EventNames.OnLevelLoaded, (object)levelData);
+            EventManager.TriggerEvent(EventNames.UpdateLevel, (object)levelIndex);
         }
         else
         {
