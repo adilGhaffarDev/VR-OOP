@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UserInfoPanel : PanelScript
+public class UserInfoPanel : Panel
 {
     [SerializeField]
     TextMeshProUGUI _userName;

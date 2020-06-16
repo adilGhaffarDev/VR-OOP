@@ -22,6 +22,9 @@ public class HelperUI : ICanvasUI
 
     int _speechIndexQ = 0;
 
+    AudioSource _audioSource;
+
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -141,14 +144,12 @@ public class HelperUI : ICanvasUI
         StartCoroutine(DownloadAndPlaySpeech(response));
     }
 
-    string voiceRSSapiKey = "39c2b2b055494503a9ac6cce0ebce648";
-    AudioSource _audioSource;
     IEnumerator DownloadAndPlaySpeech(string text)
     {
         if (!_audioSource.isPlaying)
         {
 
-            string url = "http://api.voicerss.org/?key=" + voiceRSSapiKey + "&hl=en-us&src=" + text;
+            string url = "http://api.voicerss.org/?key=" + Constants.RSS_API_KEY + "&hl=en-us&src=" + text;
 
             using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.WAV))
             {

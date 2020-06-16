@@ -1,40 +1,25 @@
 ﻿<Properties StartupConfiguration="{4FA91A42-FCD4-DC3D-54B6-53BB18BCED9B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VRThesis/Scripts/UI/UserInfoPanel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/VROOP_MAIN/Scripts/PlayFab/PlayFabLogin.cs">
     <Files>
-      <File FileName="Assets/VRThesis/Scripts/UI/BoardUI.cs" Line="82" Column="60" />
-      <File FileName="Assets/VRThesis/Scripts/Managers/PlayFabManager.cs" />
-      <File FileName="Assets/VRThesis/Scripts/Managers/SaveDataManager.cs" />
-      <File FileName="Assets/VRThesis/Scripts/SaveData/PlayerData.cs" />
-      <File FileName="Assets/VRThesis/Scripts/Core/Main.cs" />
-      <File FileName="Assets/VRThesis/Scripts/PlayFab/PlayFabLogin.cs" />
-      <File FileName="Assets/PlayFabSdk/PlayFabSDK/Client/PlayFabClientModels.cs" />
-      <File FileName="Assets/VRThesis/Scripts/Managers/ObjectInstantiator.cs" />
-      <File FileName="Assets/VRThesis/Scripts/UI/LevelsPanel.cs" />
-      <File FileName="Assets/VRThesis/Scripts/UI/HelperUI.cs" Line="53" Column="41" />
-      <File FileName="Assets/VRThesis/Scripts/HelperChatbot/HelperServer.cs" Line="1" Column="1" />
-      <File FileName="Assets/VRThesis/Scripts/Managers/StaticDataManager.cs" Line="66" Column="10" />
-      <File FileName="Assets/VRThesis/Scripts/UI/OverlayUI.cs" Line="29" Column="28" />
-      <File FileName="Assets/VRThesis/Scripts/UI/UserInfoPanel.cs" Line="31" Column="17" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/UI/Panel.cs" Line="17" Column="5" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/UI/UserInfoPanel.cs" Line="6" Column="27" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/UI/LoadingPanel.cs" Line="19" Column="5" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/UI/LevelsPanel.cs" Line="7" Column="26" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/Interfaces/IWorldView.cs" Line="5" Column="24" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/Managers/ObjectInstantiator.cs" Line="90" Column="5" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/Interfaces/IActor.cs" Line="5" Column="20" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/LevelActors/ActorHouse.cs" Line="5" Column="24" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/LevelActors/ActorFox.cs" Line="77" Column="5" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/LevelActors/ActorPrincess.cs" Line="10" Column="5" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/LevelActors/ActorTree.cs" Line="7" Column="5" />
+      <File FileName="Assets/VROOP_MAIN/Scripts/PlayFab/PlayFabLogin.cs" Line="7" Column="26" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="VRThesis" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="GoogleVR" expanded="True">
-                <Node name="Scripts" expanded="True">
-                  <Node name="EventSystem" expanded="True">
-                    <Node name="InputModule" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="PlayFabSdk" expanded="True">
-                <Node name="PlayFabSDK" expanded="True">
-                  <Node name="Client" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="Standard Assets" expanded="True" />
-              <Node name="VRThesis" expanded="True">
+              <Node name="VROOP_MAIN" expanded="True">
                 <Node name="Scripts" expanded="True">
                   <Node name="Core" expanded="True" />
                   <Node name="DataScripts" expanded="True" />
@@ -42,11 +27,10 @@
                   <Node name="Interfaces" expanded="True" />
                   <Node name="LevelActors" expanded="True" />
                   <Node name="Managers" expanded="True" />
-                  <Node name="PlayFab" expanded="True" />
-                  <Node name="SaveData" expanded="True" />
-                  <Node name="UI" expanded="True">
-                    <Node name="UserInfoPanel.cs" selected="True" />
+                  <Node name="PlayFab" expanded="True">
+                    <Node name="PlayFabLogin.cs" selected="True" />
                   </Node>
+                  <Node name="UI" expanded="True" />
                   <Node name="Utils" expanded="True" />
                 </Node>
               </Node>
@@ -58,7 +42,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="60478ec6-7a1a-41d1-b109-a63a328679fc" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="91e14724-db28-480c-9764-c1fb96c3a2aa" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/adilghaffar/Documents/UEF/Thesis/VRThesis/Assets/VRThesis/Scripts/Managers/GameManager.cs" relfile="Assets/VRThesis/Scripts/Managers/GameManager.cs" line="65" column="1" />

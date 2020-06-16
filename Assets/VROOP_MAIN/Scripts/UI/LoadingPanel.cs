@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class LoadingPanel : PanelScript
+public class LoadingPanel : Panel
 {
     [SerializeField]
     TextMeshProUGUI _loadingText;

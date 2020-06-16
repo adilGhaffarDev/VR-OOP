@@ -5,7 +5,6 @@ using System;
 public class LevelData : ScriptableObject
 {
     public HelperAgentText _startLevelText;
-    public HelperAgentText _errorLevelText;
     public HelperAgentText _endLevelText;
 
     public Question[] _questions;

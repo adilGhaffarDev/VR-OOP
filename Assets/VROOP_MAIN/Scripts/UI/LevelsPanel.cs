@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LevelsPanel : PanelScript
+public class LevelsPanel : Panel
 {
     [SerializeField]
     List<GameObject> _levelItems;

@@ -19,6 +19,5 @@ public static class Constants
 
     public static string HELPER_SERVER_URI = "http://86.50.253.105:5000/predict";
 
-
-
+    public static string RSS_API_KEY = "39c2b2b055494503a9ac6cce0ebce648";
 }

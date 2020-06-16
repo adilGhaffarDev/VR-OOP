@@ -6,7 +6,7 @@ using UnityEngine;
 public class Main : MonoBehaviour
 {
     [SerializeField]
-    LevelsDataBase _levelsData;
+    LevelsDataBase _levelsDataBase;
 
     ManagerContainer _managerContainer;
 
@@ -67,16 +67,16 @@ public class Main : MonoBehaviour
         }
     }
 
-    public void CreateServices()
+    void CreateServices()
     {
         _managerContainer = new ManagerContainer();
         _gameManager = new GameManager(_managerContainer);
         _playFabManager = new PlayFabManager(_managerContainer,_loginResult);
         _saveDataManager = new SaveDataManager(_managerContainer);
-        _staticDataManager = new StaticDataManager(_managerContainer, _levelsData);
+        _staticDataManager = new StaticDataManager(_managerContainer, _levelsDataBase);
     }
 
-    public void BindServices()
+    void BindServices()
     {
         _managerContainer.Bind<GameManager>(_gameManager);
         _managerContainer.Bind<PlayFabManager>(_playFabManager);

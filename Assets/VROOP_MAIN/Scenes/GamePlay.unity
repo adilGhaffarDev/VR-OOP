@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 612612431}
   - component: {fileID: 612612432}
   m_Layer: 5
-  m_Name: BoardCanvas
+  m_Name: BoardUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2859,7 +2859,7 @@ GameObject:
   - component: {fileID: 892224985}
   - component: {fileID: 892224988}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UserInfoUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3417,8 +3417,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2013976230}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1061578321
 MonoBehaviour:
@@ -3443,7 +3443,7 @@ GameObject:
   - component: {fileID: 1122732566}
   - component: {fileID: 1122732563}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: EventManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3472,8 +3472,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2013976230}
-  m_RootOrder: 5
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1178171659
 GameObject:
@@ -7423,7 +7423,7 @@ GameObject:
   - component: {fileID: 2013976230}
   - component: {fileID: 2013976229}
   m_Layer: 0
-  m_Name: Main
+  m_Name: EnvironmentAndUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7441,7 +7441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45998386e6071453ebc79863e64bc643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _levelsData: {fileID: 11400000, guid: 59ca3bba2cd9143dca0f8f1747f55488, type: 2}
+  _levelsDataBase: {fileID: 11400000, guid: 59ca3bba2cd9143dca0f8f1747f55488, type: 2}
 --- !u!4 &2013976230
 Transform:
   m_ObjectHideFlags: 0
@@ -7458,8 +7458,6 @@ Transform:
   - {fileID: 1536802151}
   - {fileID: 255377101}
   - {fileID: 1373617476}
-  - {fileID: 1122732566}
-  - {fileID: 1061578320}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7474,7 +7472,7 @@ GameObject:
   - component: {fileID: 2058414467}
   - component: {fileID: 2058414466}
   m_Layer: 0
-  m_Name: Parent
+  m_Name: LevelObjectsParent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7805,6 +7803,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TalkingAgent
       objectReference: {fileID: 0}
+    - target: {fileID: 7836210258313191634, guid: 3483e6eaebebe4bf8be4f5d33cd76dc8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7877514404721353780, guid: 3483e6eaebebe4bf8be4f5d33cd76dc8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7885,10 +7888,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.73
       objectReference: {fileID: 0}
-    - target: {fileID: 7836210258313191634, guid: 3483e6eaebebe4bf8be4f5d33cd76dc8,
+    - target: {fileID: 2022564634153832568, guid: 3483e6eaebebe4bf8be4f5d33cd76dc8,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      propertyPath: m_Name
+      value: HelperUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3483e6eaebebe4bf8be4f5d33cd76dc8, type: 3}
